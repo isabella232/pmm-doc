@@ -3,6 +3,13 @@ Node Summary
 ############
 
 .. image:: /_images/PMM_Node_Summary.jpg
+   :alt: Dashboard (1280x720)
+   :name: Node Summary dashboard
+
+.. image:: /_images/PMM_Node_Summary_full.jpg
+   :scale: 5%
+   :alt: Dashboard (complete)
+   :name: Node Summary dashboard (complete)
 
 **************
 System Summary

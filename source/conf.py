@@ -112,6 +112,7 @@ extlinks = {
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 html_theme = 'percona-theme'
+
 #html_add_permalinks = ""
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -200,6 +201,8 @@ html_context = {
     'edit_uri_rst': 'edit/master/source',
     'edit_uri_md': 'edit/master/docs'
 }
+
+html_scaled_image_link = True
 
 # -- Options for LaTeX output --------------------------------------------------
 

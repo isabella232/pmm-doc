@@ -97,3 +97,12 @@ PMM Server can't currently directly render dashboard images exported by Grafana 
 If the Grafana plugins are not installed, a message in the Share Panel will say so.
 
 .. image:: /_images/PMM_Common_Panel_Menu_Share_Link_Missing_Plugins.jpg
+
+.. important::
+
+   Image rendering requires at least 16GB of RAM for processing, and at least 1GB of disk space for the additional plugins and generated images.
+
+.. seealso::
+
+   - `Grafana Image Rendering <https://grafana.com/docs/grafana/latest/administration/image_rendering>`__
+   - `Percona Monitoring and Management Jira Issue PMM-5735 <https://jira.percona.com/browse/PMM-5735>`__

@@ -44,6 +44,8 @@ markdown_extensions:
     - pymdownx.superfences
     - pymdownx.highlight:
         linenums: false
+    - markdown_blockdiag:
+        format: svg
 
 plugins:
     - search

@@ -1,5 +1,22 @@
 # Percona Monitoring and Management
 
+blockdiag {
+  A [label="PMM Concepts"];
+  A1 [label="Client/Server Architecture - an Overview"];
+  A2 [label="Services"];
+
+  B [label="Installing PMM Server"];
+  B1 [label="PMM Server as a Docker container"];
+  B2 [label="Running PMM Server Using AWS Marketplace"];
+  B3 [label="PMM Server as a Virtual Appliance"];
+  B4 [label="Verifying PMM Server"];
+  B5 [label="Configuring PMM Server"];
+  B6 [label="Updating a Server"];
+
+  A -> A1,A2;
+  B -> B1,B2,B3,B4,B5,B6;
+}
+
 - [What is Percona Monitoring and Management?](introduction.md)
 - [PMM Concepts](concepts/index.md)
     - [Client/Server Architecture - an Overview](concepts/architecture.md)

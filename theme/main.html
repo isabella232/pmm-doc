@@ -53,6 +53,8 @@
 {%- macro sidebar() %}
 <div class="sphinxsidebar col-md-3 col-md-pull-9">
   <div class="sphinxsidebarwrapper">
+    {% include "partials/search.html" %}
+
     {@ product_logo @}
     {@ product_pdf_download @}
     {{ edit_repo() }}

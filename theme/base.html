@@ -68,6 +68,7 @@
     {@ product_logo @}
     {@ product_pdf_download @}
     {{ edit_repo() }}
+    {{ search() }}
     {{ version_menu() }}
     {{ toctree(nav, default_level) }}
     {{ relations() }}
@@ -396,8 +397,6 @@
         <div class="bodywrapper">
           <div class="body">
             {# toctree(nav, default_level) #}
-            {{ search() }}
-
             {{ page.content }}
             {{ toctree_menu_style() }}
           </div>

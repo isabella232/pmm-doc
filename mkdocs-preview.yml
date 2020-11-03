@@ -52,7 +52,7 @@ markdown_extensions:
 
 plugins:
     - search:
-        prebuild_index: false
+        prebuild_index: true
     - macros
 
 extra:

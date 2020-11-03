@@ -12,17 +12,23 @@ docs_dir: docs
 theme:
   name: material
   custom_dir: theme
+
+  include_search_page: true
+  search_index_only: false
+
   language: en
+
   palette:
     primary: deep-orange
     accent: white
+
   font:
     text: Chivo
     code: Roboto Mono
+
   logo: _images/pmm-doc-logo.svg
   favicon: _images/percona_favicon.ico
-#  features:
-#     tabs: true # top row navigation bar
+
 
 extra_css:
     - css/basic.css
@@ -47,7 +53,8 @@ markdown_extensions:
         linenums: false
 
 plugins:
-    - search
+    - search:
+        prebuild_index: true
     - macros
 
 extra:

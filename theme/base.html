@@ -404,4 +404,21 @@
       <div class="clearer"></div>
     </div>
   </div>
+  {% block scripts %}
+  <script src="{{ 'assets/javascripts/vendor.6a3d08fc.min.js' | url }}"></script>
+  <script src="{{ 'assets/javascripts/bundle.71201edf.min.js' | url }}"></script>
+  <script>
+    app = initialize({
+      base: "{{ base_url }}",
+      features: {{ config.theme.features or [] | tojson }},
+      search: Object.assign({
+        worker: "{{ 'assets/javascripts/worker/search.4ac00218.min.js' | url }}"
+      }, typeof search !== "undefined" && search)
+    })
+  </script>
+  {% for path in config["extra_javascript"] %}
+    <script src="{{ path | url }}"></script>
+  {% endfor %}
+{% endblock %}
+
 </body>

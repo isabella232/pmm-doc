@@ -52,9 +52,12 @@
 {#### Search form (test) #}
 {% macro search() %}
 <div role="search">
-  <form action="{{ "search.html"|url }}" method="get">
-    <input type="search" name="q" placeholder="Search docs" />
+  <form action="{{ 'search.html'|url }}" method="get">
+    <input id="mkdocs-search-query" type="text" name="q" placeholder="Search docs" />
   </form>
+</div>
+<div id="mkdocs-search-results">
+    Sorry, page not found.
 </div>
 {% endmacro %}
 
@@ -62,8 +65,6 @@
 {%- macro sidebar() %}
 <div class="sphinxsidebar col-md-3 col-md-pull-9">
   <div class="sphinxsidebarwrapper">
-    {{ search() }}
-
     {@ product_logo @}
     {@ product_pdf_download @}
     {{ edit_repo() }}
@@ -104,6 +105,7 @@
 {%- for scriptfile in script_files %}
 <script type="text/javascript" src="{{ scriptfile }}"></script>
 {%- endfor %}
+<script>var base_url = '{{ base_url }}';</script>
 {%- endmacro %}
 
 {%- macro css() %}
@@ -394,6 +396,8 @@
         <div class="bodywrapper">
           <div class="body">
             {# toctree(nav, default_level) #}
+            {{ search() }}
+
             {{ page.content }}
             {{ toctree_menu_style() }}
           </div>
@@ -404,21 +408,8 @@
       <div class="clearer"></div>
     </div>
   </div>
-  {% block scripts %}
-  <script src="{{ 'assets/javascripts/vendor.6a3d08fc.min.js' | url }}"></script>
-  <script src="{{ 'assets/javascripts/bundle.71201edf.min.js' | url }}"></script>
-  <script>
-    app = initialize({
-      base: "{{ base_url }}",
-      features: {{ config.theme.features or [] | tojson }},
-      search: Object.assign({
-        worker: "{{ 'assets/javascripts/worker/search.4ac00218.min.js' | url }}"
-      }, typeof search !== "undefined" && search)
-    })
-  </script>
   {% for path in config["extra_javascript"] %}
     <script src="{{ path | url }}"></script>
   {% endfor %}
-{% endblock %}
 
 </body>

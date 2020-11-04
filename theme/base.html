@@ -52,7 +52,7 @@
 {#### Search form (test) #}
 {% macro search() %}
 <div role="search">
-  <form action="search.html" method="get">
+  <form action='{{ "search.html"|url }}' method="get">
     <input id="mkdocs-search-query" type="text" name="q" placeholder="Search docs" />
   </form>
 </div>
@@ -380,6 +380,8 @@
   {% if page.previous %}
   <link rel="prev" title="{{ page.previous.title|striptags }}" href="{{ page.previous.url|url }}" />
   {% endif %}
+  {% block extrahead %}
+  {% endblock %}
 </head>
 <body>
   <div class="container">

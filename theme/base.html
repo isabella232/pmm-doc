@@ -52,12 +52,9 @@
 {#### Search form (test) #}
 {% macro search() %}
 <div role="search">
-  <form action="{{ 'search.html'|url }}" method="get">
+  <form action="search.html" method="get">
     <input id="mkdocs-search-query" type="text" name="q" placeholder="Search docs" />
   </form>
-</div>
-<div id="mkdocs-search-results">
-    Sorry, page not found.
 </div>
 {% endmacro %}
 
@@ -106,7 +103,6 @@
 {%- for scriptfile in script_files %}
 <script type="text/javascript" src="{{ scriptfile }}"></script>
 {%- endfor %}
-<script>var base_url = '{{ base_url }}';</script>
 {%- endmacro %}
 
 {%- macro css() %}
@@ -115,9 +111,6 @@
 {%- endfor %}
 {% endmacro %}
 
-{%- macro metatags() %}
-{# TODO #}
-{% endmacro %}
 
 {#### PMM1/PMM2 version switcher #}
 {% macro version_menu() %}
@@ -378,7 +371,6 @@
 {# Layout for content as hosted by Drupal - Note, no outer html tags #}
 <title>{% if page.title %}{{ page.title|striptags|e }}{% else %}{{ docstitle }}{% endif %}</title>
 <head>
-  {{ metatags() }}
   {{ css() }}
   {{ script() }}
   <link rel="top" title="{{ docstitle }}" href="{{ url_root }}" />
@@ -397,8 +389,13 @@
         <div class="bodywrapper">
           <div class="body">
             {# toctree(nav, default_level) #}
-            {{ page.content }}
-            {{ toctree_menu_style() }}
+
+
+  {% block content %}
+    {{ page.content }}
+  {% endblock %}
+
+  {{ toctree_menu_style() }}
           </div>
         </div>
         {{ relbar() }}

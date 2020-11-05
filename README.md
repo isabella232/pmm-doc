@@ -1,11 +1,12 @@
 # Percona Monitoring and Management (PMM) Documentation
+
 Here are documentation source files for [Percona Monitoring and Management](https://www.percona.com/software/database-tools/percona-monitoring-and-management), a free, open-source, database monitoring solution.
 
 > **Note**
 >
 > This repository is for Percona Monitoring and Management version 2.
 
-The HTML documentation is published at [percona.com/doc](https://www.percona.com/doc/percona-monitoring-and-management/2.x/index.html).
+The HTML documentation is published at [percona.com/doc](https://www.percona.com/doc/percona-monitoring-and-management/2.x/).
 
 We welcome any contributions. This page explains how you can do that.
 
@@ -23,7 +24,7 @@ There are three ways to get changes made to the documentation. Two are 'do it yo
 
 ### Option 1: 'Do it yourself': Edit via Github
 
-1. Each page of [PMM 2 documentation](https://www.percona.com/doc/percona-monitoring-and-management/2.x/index.html) has a link to the `.md` version of the page.
+1. Each page of [PMM 2 documentation](https://www.percona.com/doc/percona-monitoring-and-management/2.x/) has a link to the `.md` version of the page.
 
 2. Click the link to be taken to the github edit page.
 
@@ -73,11 +74,11 @@ There are three ways to get changes made to the documentation. Two are 'do it yo
 > Documentation built this way has no styling because it is intended for hosting on percona.com.
 > You can build a themed version for local viewing by changing the command in step 3 to:
 >
-> `docker run --rm -v $(pwd):/docs perconalab/pmm-doc-md mkdocs build -f mkdocs-preview.yml`
+> `docker run --rm -v $(pwd):/docs perconalab/pmm-doc-md mkdocs build -t material`
 >
 > Alternatively, you can use the MkDocs built-in web server to live preview local edits:
 >
-> `docker run --rm -v $(pwd):/docs -p 8000:8000 perconalab/pmm-doc-md mkdocs serve -f mkdocs-preview.yml --dev-addr=0.0.0.0:8000`
+> `docker run --rm -v $(pwd):/docs -p 8000:8000 perconalab/pmm-doc-md mkdocs serve -t material --dev-addr=0.0.0.0:8000`
 >
 > and point your browser to [http://localhost:8000](http://localhost:8000).
 
@@ -97,6 +98,6 @@ To build the documentation without Docker, you must [install MkDocs and extensio
 
 3. View the site:
 
-   `mkdocs serve -f mkdocs-preview.yml`
+   `mkdocs serve -t material`
 
    and visit <http://localhost:8000>

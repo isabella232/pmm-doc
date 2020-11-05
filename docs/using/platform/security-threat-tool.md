@@ -1,13 +1,13 @@
 # Security Threat Tool
 
-The Security Threat Toll runs regular checks against connected databases, alerting you if any servers pose a potential security threat.
+The Security Threat Tool runs regular checks against connected databases, alerting you if any servers pose a potential security threat.
 
 The checks are automatically downloaded from Percona Platform and run every 24 hours. (This period is not configurable.)
 
-They run on the PMM Client side with the results passed to PMM Server for display in the *Failed security checks* summary dashboard
-and the *PMM Database Checks* details dashboard.
+They run on the PMM Client side with the results passed to PMM Server for display in the *Failed security checks* summary dashboard and the *PMM Database Checks* details dashboard.
 
 !!! note
+
     Check results data *always* remains on the PMM Server, and is not to be confused with anonymous data sent for Telemetry purposes.
 
 ## Where to see the results of checks
@@ -22,12 +22,11 @@ More details can be seen by opening the *Failed Checks* dashboard using *PMM > P
 
 !!! note
 
-    After [activating](../../how-to/configure.md#server-admin-gui-stt) the Security Threat Tool, you must wait 24 hours for data to appear in the dashboard.
+    After activating the Security Threat Tool, you must wait 24 hours for data to appear in the dashboard.
 
 ## How to enable the Security Threat Tool
 
 The Security Threat Tool is disabled by default. It can be enabled in *PMM > PMM Settings*
-(see [PMM Settings Page](../../how-to/configure.md#server-admin-gui-pmm-settings-page)).
 
 Failed security checks summary dashboard when checks are disabled:
 
@@ -53,3 +52,7 @@ Failed database checks dashboard when disabled:
 
 `postgresql_version`
 : Warn if PostgreSQL version is not the latest.
+
+!!! seealso "See also"
+
+    [PMM Settings > Security Threat Tool](../../how-to/configure.md#security-threat-tool)

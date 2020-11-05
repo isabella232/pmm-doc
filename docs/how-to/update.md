@@ -1,4 +1,4 @@
-# Updating a Server
+# Update a server
 
 Client and server components are installed and updated separately.
 

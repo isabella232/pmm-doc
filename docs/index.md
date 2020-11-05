@@ -1,21 +1,12 @@
 # Percona Monitoring and Management
 
-Jump to:
-
-[Release Notes](release-notes/index.md){: .btn .btn-secondary .btn-lg .md-button .md-button--primary }
-
-
-----
-
-## Welcome
-
-### What is *Percona Monitoring and Management*?
+## What is *Percona Monitoring and Management*?
 
 Percona Monitoring and Management (PMM) is an open-source platform for managing and monitoring MySQL, PostgreSQL, MongoDB, and ProxySQL performance. It is developed by Percona in collaboration with experts in the field of managed database services, support and consulting.
 
 PMM is a free and open-source solution that you can run in your own environment for maximum security and reliability. It provides thorough time-based analysis for MySQL, PostgreSQL and MongoDB servers to ensure that your data works as efficiently as possible.
 
-### Architecture
+## Architecture
 
 The PMM platform is based on a client-server model that enables scalability. It includes the following modules:
 
@@ -37,7 +28,7 @@ PMM is a collection of tools designed to seamlessly work together.  Some are dev
 
 The following sections illustrates how PMM is currently structured.
 
-#### PMM Client
+## PMM Client
 
 ![image](_images/diagram.pmm.client-architecture.png)
 
@@ -68,7 +59,7 @@ To make data transfer from PMM Client to PMM Server secure, all exporters are ab
     * login is `pmm`
     * password is equal to Agent ID, which can be seen e.g. on the Inventory Dashboard.
 
-#### PMM Server
+## PMM Server
 
 ![image](_images/diagram.pmm.server-architecture.png)
 
@@ -110,29 +101,23 @@ Security Threat Tool checks registered database instances for a range of common 
 
 !!! seealso "See also"
 
-    * [Security Threat Tool main page](using/platform/stt.md)
+    * [Security Threat Tool main page](using/platform/security-threat-tool.md)
 
     * [Security Threat Tool settings](how-to/configure.md#security-threat-tool)
 
-
-
-
-
-
-
-### Contact Us
+## Contact Us
 
 *Percona Monitoring and Management* is an open source product.  We provide ways for anyone to contact developers and experts directly, submit bug reports and feature requests, and contribute to source code directly.
 
-#### Contacting the developers
+**Contacting the developers**
 
 Use the [community forum](https://www.percona.com/forums/questions-discussions/percona-monitoring-and-management) to ask questions about using PMM.  Developers and experts will try to help with problems that you experience.
 
-#### Reporting bugs
+**Reporting bugs**
 
 Use the [PMM project in JIRA](https://jira.percona.com/projects/PMM) to report bugs and request features.  Please register and search for similar issues before submitting a bug or feature request.
 
-#### Contributing to development
+**Contributing to development**
 
 To explore source code and suggest contributions, see the [PMM repository list](https://github.com/percona/pmm/blob/PMM-2.0/README.md).
 

@@ -1,4 +1,4 @@
-# Adding Linux metrics
+# Linux
 
 ## Adding general system metrics service
 

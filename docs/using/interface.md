@@ -1,4 +1,4 @@
-# Interface
+# Web interface
 
 You can access the PMM web interface using the IP address of the host where PMM Server is running.  For example, if PMM Server is running on a host with IP 192.168.100.1, access the following address with your web browser: `http://192.168.100.1`.
 

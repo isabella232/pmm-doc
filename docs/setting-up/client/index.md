@@ -156,7 +156,7 @@ the Docker container. For more information, see How do I troubleshoot communicat
 
 For more information about using Docker, see the [Docker documentation](https://docs.docker.com).
 
-## Setting Up a Docker Container for PMM Client
+### Setting Up a Docker Container for PMM Client
 
 A Docker image is a collection of preinstalled software which lets you
 run a selected version of PMM Client.

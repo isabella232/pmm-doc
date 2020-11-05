@@ -1,7 +1,6 @@
-# Adding a ProxySQL host
+# ProxySQL
 
-Use the `proxysql` alias
-to enable ProxySQL performance metrics monitoring.
+Use the `proxysql` alias to enable ProxySQL performance metrics monitoring.
 
 ## USAGE
 

@@ -1,17 +1,12 @@
-<div class="section" id="faq"></div>
+# FAQ
 
-# Frequently Asked Questions
+[TOC]
 
 ## How can I contact the developers?
 
 The best place to discuss PMM with developers and other community members is the [community forum](https://www.percona.com/forums/questions-discussions/percona-monitoring-and-management).
 
 To report a bug, visit the [PMM project in JIRA](https://jira.percona.com/projects/PMM).
-
-
-
-
-<div class="section" id="sys-req"></div>
 
 ## What are the minimum system requirements for PMM?
 
@@ -23,7 +18,7 @@ It needs roughly 1 GB of storage for each monitored database node with data rete
 
 !!! note
 
-    By default, [retention](#how-to-control-data-retention-for-pmm) is set to 30 days for Metrics Monitor and for Query Analytics.  You can consider [disabling table statistics](manage/conf-mysql-disable-table-stats.md) to decrease the Prometheus database size.
+    By default, [retention](#how-to-control-data-retention-for-pmm) is set to 30 days for Metrics Monitor and for Query Analytics.  You can consider [disabling table statistics](how-to/optimize.md#disable-table-statistics) to decrease the Prometheus database size.
 
 The minimum memory requirement is 2 GB for one monitored database node.
 
@@ -42,13 +37,12 @@ A minimum of 100 MB of storage is required for installing the PMM Client package
 
 Because of the significant architectural changes between PMM1 and PMM2, there is no direct upgrade path.  The approach to making the switch from PMM version 1 to 2 is a gradual transition, outlined [in this blog post](https://www.percona.com/blog/2019/11/27/running-pmm1-and-pmm2-clients-on-the-same-host/).
 
-In short, it involves first standing up a new PMM2 server on a new host and connecting clients to it.  As new data is reported to the PMM2 server, old metrics will age out during the course of the retention period (30 days, by default), at which point you'll be able to shut down your existing PMM1 server.  
+In short, it involves first standing up a new PMM2 server on a new host and connecting clients to it.  As new data is reported to the PMM2 server, old metrics will age out during the course of the retention period (30 days, by default), at which point you'll be able to shut down your existing PMM1 server.
 
-!!! note 
+!!! note
 
-    Any alerts configured through the Grafana UI will have to be recreated due to the target dashboard id's not matching between PMM1 and PMM2.  In this instance we recommend moving to Alertmanager recipes in PMM2 for alerting which, for the time being, requires a separate [Alertmanager instance](https://www.percona.com/blog/2020/02/21/percona-monitoring-and-management-meet-prometheus-alertmanger/). However, we are working on integrating this natively into PMM2 Server and expect to support your existing Alertmanager rules.  
+    Any alerts configured through the Grafana UI will have to be recreated due to the target dashboard id's not matching between PMM1 and PMM2.  In this instance we recommend moving to Alertmanager recipes in PMM2 for alerting which, for the time being, requires a separate [Alertmanager instance](https://www.percona.com/blog/2020/02/21/percona-monitoring-and-management-meet-prometheus-alertmanger/). However, we are working on integrating this natively into PMM2 Server and expect to support your existing Alertmanager rules.
 
-<div class="section" id="data-retention"></div>
 
 ## How to control data retention for PMM?
 
@@ -59,29 +53,19 @@ Depending on your available disk space and requirements, you may need to adjust 
 
 2. Change the data retention value.
 
-    ![image](./_images/PMM_Settings_Advanced_Settings.jpg)
+    ![image](_images/PMM_Settings_Advanced_Settings.jpg)
 
 3. Click *Apply changes*.
-
-
-
 
 ## How often are NGINX logs in PMM Server rotated?
 
 PMM Server runs `logrotate` on a daily basis to rotate NGINX logs and keeps up to ten of the most recent log files.
-
-
-
-<div class="section" id="privileges"></div>
 
 ## What privileges are required to monitor a MySQL instance?
 
 ```sql
 GRANT SELECT, PROCESS, SUPER, REPLICATION CLIENT, RELOAD ON *.* TO 'pmm'@'localhost';
 ```
-
-
-
 
 ## Can I monitor multiple service instances?
 
@@ -100,31 +84,23 @@ For more information, run:
 pmm-admin add mysql --help
 ```
 
-
-
 ## Can I rename instances?
 
-You can remove any monitoring instance and then add it back with a different name (see [Removing monitoring services with pmm-admin remove](manage/client-remove.md)).
+You can remove any monitoring instance and then add it back with a different name (see [Removing monitoring services with pmm-admin remove](setting-up/client/index.md#removing-services)).
 
 When you remove a monitoring service, previously collected data remains available in Grafana.  However, the metrics are tied to the instance name.  So if you add the same instance back with a different name, it will be considered a new instance with a new set of metrics.  So if you are re-adding an instance and want to keep its previous data, add it with the same name.
 
-
-
 ## Can I add an AWS RDS MySQL or Aurora MySQL instance from a non-default AWS partition?
 
-By default, the RDS discovery works with the default `aws` partition. But you can switch to special regions, like the [GovCloud](https://aws.amazon.com/govcloud-us/) one, with the alternative [AWS partitions](https://docs.aws.amazon.com/sdk-for-go/api/aws/endpoints/#pkg-constants) (e.g. `aws-us-gov`) adding them to the *Settings* via the PMM Server API (see [Exploring PMM API](manage/server-pmm-api.md)).
+By default, the RDS discovery works with the default `aws` partition. But you can switch to special regions, like the [GovCloud](https://aws.amazon.com/govcloud-us/) one, with the alternative [AWS partitions](https://docs.aws.amazon.com/sdk-for-go/api/aws/endpoints/#pkg-constants) (e.g. `aws-us-gov`) adding them to the *Settings* via the PMM Server API (see [API](reference/api.md)).
 
 ![image](_images/aws-partitions-in-api.png)
 
 To specify other than the default value, or to use several, use the JSON Array syntax: `["aws", "aws-cn"]`.
 
-
-
-<div class="section" id="troubleshoot-connection"></div>
-
 ## How do I troubleshoot communication issues between PMM Client and PMM Server?
 
-Broken network connectivity may be due to many reasons.  Particularly, when [using Docker](install/docker.md), the container is constrained by the host-level routing and firewall rules. For example, your hosting provider might have default *iptables* rules on their hosts that block communication between PMM Server and PMM Client, resulting in *DOWN* targets in Prometheus. If this happens, check the firewall and routing settings on the Docker host.
+Broken network connectivity may be due to many reasons.  Particularly, when [using Docker](setting-up/server/docker.md), the container is constrained by the host-level routing and firewall rules. For example, your hosting provider might have default *iptables* rules on their hosts that block communication between PMM Server and PMM Client, resulting in *DOWN* targets in Prometheus. If this happens, check the firewall and routing settings on the Docker host.
 
 PMM is also able to generate diagnostics data which can be examined and/or shared with Percona Support to help quickly solve an issue. You can get collected logs from PMM Client using the `pmm-admin summary` command.
 
@@ -137,9 +113,10 @@ Logs obtained in this way includes PMM Client logs and logs which were received 
 You can get PMM Server logs in two ways:
 
 - In a browser, visit `https://<address-of-your-pmm-server>/logs.zip`.
-- Go to *PMM > PMM Settings* and click *Download server diagnostics*. (See [Diagnostics in PMM Settings](manage/server-admin-gui.md#diagnostics).)
+- Go to *PMM > PMM Settings* and click *Download server diagnostics*.
 
-<div class="section" id="metrics-resolution"></div>
+!!! seealso
+    [Diagnostics in PMM Settings](how-to/configure.md#diagnostics).)
 
 ## What resolution is used for metrics?
 
@@ -149,13 +126,8 @@ The default values are:
 * Medium: 10 seconds
 * High: 5 seconds
 
-(See [Metrics resolution](manage/server-admin-gui.md#metrics-resolution).)
-
-
-
-
-<div class="section" id="how-to-integrate-alertmanager-with-pmm"></div>
-<div class="section" id="how-to-setup-alerting-with-grafana"></div>
+!!! seealso
+    [Metrics resolution](how-to/configure.md#metrics-resolution).)
 
 ## How do I set up Alerting in PMM?
 
@@ -177,10 +149,6 @@ Alertmanager allows the creation of more sophisticated alerting rules and can be
     * [Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/#alertmanager)
     * [PMM Alerting with Grafana: Working with Templated Dashboards](https://www.percona.com/blog/2017/02/02/pmm-alerting-with-grafana-working-with-templated-dashboards/)
 
-
-
-<div class="section" id="how-to-use-a-custom-prometheus-configuration-file-inside-of-a-pmm-server"></div>
-
 ## How do I use a custom Prometheus configuration file inside PMM Server?
 
 Normally, PMM Server fully manages the [Prometheus configuration file](https://prometheus.io/docs/prometheus/latest/configuration/configuration/).
@@ -191,12 +159,13 @@ From version 2.4.0, when `pmm-managed` starts the Prometheus file generation pro
 
 !!! note
 
-    The `prometheus.yml` file can be regenerated by restarting the PMM Server container, or by using the `SetSettings` API call with an empty body (see [Exploring PMM API](manage/server-pmm-api.md)).
+    The `prometheus.yml` file can be regenerated by restarting the PMM Server container, or by using the `SetSettings` API call with an empty body.
 
 !!! seealso "See also"
 
-    [Extending PMM’s Prometheus Configuration](https://www.percona.com/blog/2020/03/23/extending-pmm-prometheus-configuration/)
+    - [API](reference/api.md))
 
+    - [Extending PMM’s Prometheus Configuration](https://www.percona.com/blog/2020/03/23/extending-pmm-prometheus-configuration/)
 
 ## How to troubleshoot an Update?
 
@@ -221,4 +190,3 @@ Refresh The Home page in 2-5 min and you should see that PMM was updated.
 ## What are my login credentials when I try to connect to a Prometheus Exporter?
 
 PMM protects an exporter's output from unauthorized access by adding an authorization layer. To access an exporter you can use "`pmm`" as a user name and the Agent ID as a password. You can find the Agent ID corresponding to a given exporter by running `pmm-admin list`.
-

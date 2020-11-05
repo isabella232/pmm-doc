@@ -186,4 +186,4 @@ nav:
         - 'release-notes/2.0.0.md'
     - Frequently Asked Questions: 'faq.md'
     - Reference:
-        - pmm-admin: 'reference/pmm-admin.md'
+        - pmm-admin: 'reference/commands/pmm-admin.md'

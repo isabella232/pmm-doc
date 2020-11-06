@@ -196,24 +196,28 @@
     another: dir/section.md
 
 #}
-{%- macro navi(item, class) %}
+{%- macro navi(item, class, close) %}
 <li class="{{ class }}">
+  {%- if item.url %}
   <a class="reference internal" href="{{ item.url|url }}">{{ item.title }}</a>
-</li>
+  {%- else %}
+  <a class="reference internal" href="#">{{ item.title }}</a>
+  {% endif %}
+  {%- if close %}</li>{% endif %}
 {% endmacro %}
 
-{#### Table of contents for left nav column #}
+{#### Table of contents for left nav column (recursive, limited by level #}
 {% macro toctree(n, level) %}
-{% if level <= max_level %}
-<ul>
-  {% for i in n %}
-  {{ navi(i, "toctree-l" + level|string) }}
-  {% if i.children %}
-  {{ toctree(i.children, level+1) }}
+  {% if level <= max_level %}
+  <ul>
+    {% for i in n %}
+      {{ navi(i, "toctree-l" + level|string) }}
+      {% if i.children %}
+        {{ toctree(i.children, level+1) }}
+      {% endif %}
+    {% endfor %}
+  </ul>
   {% endif %}
-  {% endfor %}
-</ul>
-{% endif %}
 {% endmacro %}
 
 {# From sphinx template page.html or _static/js/toggle-menu.js #}

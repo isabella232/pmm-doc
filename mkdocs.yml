@@ -80,7 +80,7 @@ nav:
         - using/interface.md
         - using/query-analytics.md
         - Percona Platform:
-            - using/platform/intro.md
+            - using/platform/index.md
             - using/platform/security-threat-tool.md
     - How to:
         - how-to/index.md

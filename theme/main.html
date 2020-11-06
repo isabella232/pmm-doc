@@ -196,15 +196,10 @@
     another: dir/section.md
 
 #}
-{%- macro navi(item, class, close) %}
+{%- macro navi(item, class) %}
 <li class="{{ class }}">
-  {%- if item.url %}
   <a class="reference internal" href="{{ item.url|url }}">{{ item.title }}</a>
-  {%- else %}
-  {% set title_path = (item.title).split('=') %}
-  <a class="reference internal" href="{{ title_path[1]|url }}">{{ title_path[0] }}</a>
-  {% endif %}
-  {%- if close %}</li>{% endif %}
+</li>
 {% endmacro %}
 
 {#### Table of contents for left nav column #}

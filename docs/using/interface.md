@@ -12,11 +12,11 @@ By default the PMM home page lists most recently used dashboards and helpful lin
 
 The PMM home page lists all hosts that you have set up for monitoring as well as the essential details about their performance such as CPU load, disk performance, or network activity.
 
-# Understanding Dashboards
+## Dashboards
 
 The Metrics Monitor tool provides a historical view of metrics that are critical to a database server. Time-based graphs are separated into dashboards by themes: some are related to MySQL or MongoDB, others provide general system metrics.
 
-## Opening a Dashboard
+### Opening a Dashboard
 
 The default PMM installation provides more than thirty dashboards. To make it easier to reach a specific dashboard, the system offers two tools. The *Dashboard Dropdown* is a button in the header of any PMM page. It lists all dashboards, organized into folders. Right sub-panel allows to rearrange things, creating new folders and dragging dashboards into them. Also a text box on the top allows to search the required dashboard by typing.
 
@@ -24,7 +24,7 @@ With *Dashboard Dropdown*, search the alphabetical list for any dashboard.
 
 ![image](../_images/metrics-monitor.dashboard-dropdown.png)
 
-## Viewing More Information about a Graph
+### Viewing More Information about a Graph
 
 Each graph has a descriptions to display more information about the monitored data without cluttering the interface.
 
@@ -38,7 +38,7 @@ Graph descriptions provide more information about a graph without claiming any s
 
     [Selecting time or date range](query-analytics.md#filters-panel)
 
-## Rendering Dashboard Images
+### Rendering Dashboard Images
 
 PMM Server can't currently directly render dashboard images exported by Grafana without these additional set-up steps.
 
@@ -90,7 +90,7 @@ If the necessary plugins are not installed, a message in the Share Panel will sa
 ![image](../_images/PMM_Common_Panel_Menu_Share_Link_Missing_Plugins.jpg)
 
 
-# Navigating across Dashboards
+### Navigating across Dashboards
 
 Beside the *Dashboard Dropdown* button you can also Navigate across
 Dashboards with the navigation menu which groups dashboards by
@@ -108,7 +108,7 @@ that matches your choice.
 
 ![image](../_images/metrics-monitor.menu.png)
 
-## Zooming in on a single metric
+### Zooming in on a single metric
 
 On dashboards with multiple metrics, it is hard to see how the value of a single
 metric changes over time. Use the context menu to zoom in on the selected metric
@@ -138,9 +138,7 @@ MySQL InnoDB Advanced dashboard and continue looking at serverA, thus saving you
 a few clicks in the interface.
 
 
-# Annotating important Application Events
-
-## Adding annotations
+### Annotations
 
 The `pmm-admin annotate` command registers a moment in time, marking it with a text string called an *annotation*.
 
@@ -176,7 +174,7 @@ They can be set globally or for specific nodes or services.
 `--service-name`
 : The service name being annotated.
 
-## Combining flags
+#### Combining flags
 
 Flags may be combined as shown in the following examples.
 
@@ -222,7 +220,7 @@ Flags may be combined as shown in the following examples.
 !!! note
     If node or service name is specified, they are used instead of other parameters.
 
-## Annotation Visibility
+#### Annotation Visibility
 
 You can toggle the display of annotations on graphs with the *PMM Annotations* checkbox.
 
@@ -232,5 +230,5 @@ Remove the check mark to hide annotations from all dashboards.
 
 !!! seealso "See also"
 
-    * [pmm-admin - PMM Administration Tool](../reference/commands/pmm-admin.md)
-    * [docs.grafana.org: Annotations](http://docs.grafana.org/reference/annotations/)
+    - [pmm-admin](../reference/commands/pmm-admin.md)
+    - [docs.grafana.org: Annotations](http://docs.grafana.org/reference/annotations/)

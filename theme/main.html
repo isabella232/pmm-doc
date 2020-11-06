@@ -201,7 +201,7 @@
   {%- if item.url %}
   <a class="reference internal" href="{{ item.url|url }}">{{ item.title }}</a>
   {%- else %}
-  <a class="reference internal" href="#">{{ item.title }}</a>
+  <a class="reference internal" style="text-decoration: none;">{{ item.title }}</a>
   {% endif %}
   {%- if close %}</li>{% endif %}
 {% endmacro %}

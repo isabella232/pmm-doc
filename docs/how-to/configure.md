@@ -166,7 +166,7 @@ by clicking the **Download server diagnostics** button.
 
     * [How do I troubleshoot communication issues between PMM Client and PMM Server?](../faq.md#how-do-i-troubleshoot-communication-issues-between-pmm-client-and-pmm-server)
 
-    * [Security Threat Tool main page](../using/platform/stt.md)
+    * [Security Threat Tool main page](../using/platform/security-threat-tool.md)
 
     * [Prometheus Alertmanager documentation](https://prometheus.io/docs/alerting/alertmanager/)
 

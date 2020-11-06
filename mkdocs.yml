@@ -84,7 +84,7 @@ nav:
             - using/platform/security-threat-tool.md
     - How to:
         - how-to/index.md
-        - how-to/update.md
+        - how-to/upgrade.md
         - how-to/security.md
         - how-to/optimize.md
         - how-to/configure.md

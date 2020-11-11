@@ -65,7 +65,7 @@ Delete the search text and press Enter to see the full list again.
 
 **Columns**
 
-* The first column is the object’s identifier. For *Query*, it is the query’s [Fingerprint](../reference/glossary.md#fingerprint).
+* The first column is the object’s identifier. For *Query*, it is the query’s [Fingerprint](../details/glossary.md#fingerprint).
 
 * The second column is the *Main metric*, containing a reduced graphical representation of the metric over time, called a *sparkline*, and a horizontal meter, filled to reflect a percentage of the total value.
 

@@ -162,8 +162,8 @@ pmm-admin add mongodb --tls
 
     - [MongoDB Documentation: Enabling Profiling](https://docs.mongodb.com/manual/tutorial/ manage-the-database-profiler/)
 
-    - [MongoDB Documentation: Profiling Mode](https://docs.mongodb.com/manual/reference/configuration-options/#operationProfiling.mode)
+    - [MongoDB Documentation: Profiling Mode](https://docs.mongodb.com/manual/details/configuration-options/#operationProfiling.mode)
 
-    - [MongoDB Documentation: SlowOpThresholdMd option](https://docs.mongodb.com/manual/reference/configuration-options/#operationProfiling.slowOpThresholdMs)
+    - [MongoDB Documentation: SlowOpThresholdMd option](https://docs.mongodb.com/manual/details/configuration-options/#operationProfiling.slowOpThresholdMs)
 
     - [MongoDB Documentation: Profiler Overhead](https://docs.mongodb.com/manual/tutorial/manage-the-database-profiler/#profiler-overhead)

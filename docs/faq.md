@@ -92,7 +92,7 @@ When you remove a monitoring service, previously collected data remains availabl
 
 ## Can I add an AWS RDS MySQL or Aurora MySQL instance from a non-default AWS partition?
 
-By default, the RDS discovery works with the default `aws` partition. But you can switch to special regions, like the [GovCloud](https://aws.amazon.com/govcloud-us/) one, with the alternative [AWS partitions](https://docs.aws.amazon.com/sdk-for-go/api/aws/endpoints/#pkg-constants) (e.g. `aws-us-gov`) adding them to the *Settings* via the PMM Server API (see [API](reference/api.md)).
+By default, the RDS discovery works with the default `aws` partition. But you can switch to special regions, like the [GovCloud](https://aws.amazon.com/govcloud-us/) one, with the alternative [AWS partitions](https://docs.aws.amazon.com/sdk-for-go/api/aws/endpoints/#pkg-constants) (e.g. `aws-us-gov`) adding them to the *Settings* via the PMM Server API (see [API](details/api.md)).
 
 ![image](_images/aws-partitions-in-api.png)
 
@@ -163,7 +163,7 @@ From version 2.4.0, when `pmm-managed` starts the Prometheus file generation pro
 
 !!! seealso "See also"
 
-    - [API](reference/api.md))
+    - [API](details/api.md))
 
     - [Extending PMM’s Prometheus Configuration](https://www.percona.com/blog/2020/03/23/extending-pmm-prometheus-configuration/)
 

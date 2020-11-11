@@ -6,9 +6,9 @@ In the given example, you would need to direct your browser to *http://192.168.1
 
 ## Accessing the Components of the Web Interface
 
-* `http://192.168.100.1` to access [Home Dashboard](../../reference/dashboards/dashboard-home.md).
+* `http://192.168.100.1` to access [Home Dashboard](../../details/dashboards/dashboard-home.md).
 
-* `http://192.168.100.1/swagger/` to access [PMM API](../../reference/api.md).
+* `http://192.168.100.1/swagger/` to access [PMM API](../../details/api.md).
 
 PMM Server provides user access control, and therefore you will need
 user credentials to access it:

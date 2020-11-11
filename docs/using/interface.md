@@ -230,5 +230,5 @@ Remove the check mark to hide annotations from all dashboards.
 
 !!! seealso "See also"
 
-    - [pmm-admin](../reference/commands/pmm-admin.md)
-    - [docs.grafana.org: Annotations](http://docs.grafana.org/reference/annotations/)
+    - [pmm-admin](../details/commands/pmm-admin.md)
+    - [docs.grafana.org: Annotations](http://docs.grafana.org/details/annotations/)

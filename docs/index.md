@@ -22,9 +22,9 @@ The modules are packaged for easy installation and usage. It is assumed that the
 
 PMM is a collection of tools designed to seamlessly work together.  Some are developed by Percona and some are third-party open-source tools.
 
-!!! note
-
-    The overall client-server model is not likely to change, but the set of tools that make up each component may evolve with the product.
+> **Note**
+>
+> The overall client-server model is not likely to change, but the set of tools that make up each component may evolve with the product.
 
 The following sections illustrates how PMM is currently structured.
 
